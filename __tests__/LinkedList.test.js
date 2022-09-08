@@ -10,4 +10,22 @@ describe('Testing Linked List class', () => {
         expect(linkedList.head).toBeNull();
         expect(linkedList.next).toBeNull();
     });
+    it('should insert a new node', () => {
+        const linkedList = new LinkedList();
+        linkedList.insert('foo');
+        expect(linkedList.head.value).toEqual('foo');
+        expect(linkedList.head.next).toBeNull();
+    });
+    it('should insert multiple nodes at the begining', () => {
+        const linkedList = new LinkedList();
+        linkedList.insert('foo');
+        linkedList.insert('bar');
+        linkedList.insert('baz');
+        expect(linkedList.head.value).toEqual('baz');
+        expect(linkedList.head.next.value).toBe('bar');
+        expect(linkedList.head.next.next.value).toBe('foo');
+        expect(linkedList.head.next.next.next).toBeNull();
+    });
 });
+
+// Author: @zaidalshibi
