@@ -26,6 +26,22 @@ describe('Testing Linked List class', () => {
         expect(linkedList.head.next.next.value).toBe('foo');
         expect(linkedList.head.next.next.next).toBeNull();
     });
+    it('should append a new node to empty linked list', () => {
+        const linkedList = new LinkedList();
+        linkedList.append('foo');
+        expect(linkedList.head.value).toEqual('foo');
+        expect(linkedList.head.next).toBeNull();
+    });
+    it('should append multiple nodes to non-empty linked list', () => {
+        const linkedList = new LinkedList();
+        linkedList.insert('foo');
+        linkedList.append('bar');
+        linkedList.append('baz');
+        expect(linkedList.head.value).toEqual('foo');
+        expect(linkedList.head.next.value).toEqual('bar');
+        expect(linkedList.head.next.next.value).toEqual('baz');
+        expect(linkedList.head.next.next.next).toBeNull();
+    });
 });
 
 // Author: @zaidalshibi
