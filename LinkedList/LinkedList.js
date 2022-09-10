@@ -3,6 +3,9 @@
 const Node = require( './Node' );
 
 
+/* We create a new node, and then we set the next property of the new node to the next property of the
+node at the index we want to insert at. Then we set the next property of the node at the index we
+want to insert at to the new node */
 class LinkedList {
     /**
      * The constructor function is a special function that is called when a new object is created
@@ -93,7 +96,37 @@ class LinkedList {
         }
     }
 
-    
+    /**
+    * We create a new node, and then we set the next property of the new node to the next property of
+    * the node at the index we want to insert at. Then we set the next property of the node at the
+    * index we want to insert at to the new node
+    * 
+    * @param value the value to be inserted into the list
+    * @param index the index where you want to insert the value
+    * 
+    * @return The value of the node at the given index.
+    */
+    insertIntoIndex ( value, index ) {
+        if ( index > this.size() ) {
+            return;
+        } else if ( index === 0 ) {
+            this.insert( value );
+            return;
+        } else if ( index === this.size() ) {
+            this.append( value );
+            return;
+        } else {
+            const node = new Node( value );
+            let count = index;
+            let currentNode = this.head;
+            while ( count - 1 ) {
+                currentNode = currentNode.next;
+                count--;
+            }
+            node.next = currentNode.next;
+            currentNode.next = node;
+        }
+    }
 }
 
 module.exports = LinkedList;
