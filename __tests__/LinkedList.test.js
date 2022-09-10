@@ -148,6 +148,77 @@ describe('Testing Linked List class', () => {
         const linkedList = new LinkedList();
         expect(linkedList.deleteMiddle()).toBeUndefined();
     });
+
+    // ToDo : insert into specific index method .insertIntoIndex(value, index)
+    // Test 13
+    // Can successfully insert a node into given index of the linked list
+    /* This is a test case that is testing the insertIntoIndex method of the LinkedList class. */
+    it('should insert a node into given index of the linked list', () => {
+        const linkedList = new LinkedList();
+        linkedList.insert('zaid');
+        linkedList.append('mohammed');
+        linkedList.append('ahmad');
+        linkedList.append('laila');
+        linkedList.append('alaa');
+        linkedList.insertIntoIndex('sara', 3);
+        expect(linkedList.head.value).toEqual('zaid');
+        expect(linkedList.head.next.value).toEqual('mohammed');
+        expect(linkedList.head.next.next.value).toEqual('ahmad');
+        expect(linkedList.head.next.next.next.value).toEqual('sara');
+        expect(linkedList.head.next.next.next.next.value).toEqual('laila');
+        expect(linkedList.head.next.next.next.next.next.value).toEqual('alaa');
+        expect(linkedList.head.next.next.next.next.next.next).toBeNull();
+    });
+    // Test 14
+    // Can successfully insert a node into the first index of the linked list
+    /* This is a test case that is testing the insertIntoIndex method of the LinkedList class. */
+    it('should insert a node into the first index of the linked list', () => {
+        const linkedList = new LinkedList();
+        linkedList.insert('zaid');
+        linkedList.append('mohammed');
+        linkedList.append('ahmad');
+        linkedList.append('laila');
+        linkedList.append('alaa');
+        linkedList.insertIntoIndex('sara', 0);
+        expect(linkedList.head.value).toEqual('sara');
+        expect(linkedList.head.next.value).toEqual('zaid');
+        expect(linkedList.head.next.next.value).toEqual('mohammed');
+        expect(linkedList.head.next.next.next.value).toEqual('ahmad');
+        expect(linkedList.head.next.next.next.next.value).toEqual('laila');
+        expect(linkedList.head.next.next.next.next.next.value).toEqual('alaa');
+        expect(linkedList.head.next.next.next.next.next.next).toBeNull();
+    });
+    // Test 15
+    // Can successfully insert a node into the last index of the linked list
+    /* This is a test case that is testing the insertIntoIndex method of the LinkedList class. */
+    it('should insert a node into the last index of the linked list', () => {
+        const linkedList = new LinkedList();
+        linkedList.insert('zaid');
+        linkedList.append('mohammed');
+        linkedList.append('ahmad');
+        linkedList.append('laila');
+        linkedList.append('alaa');
+        linkedList.insertIntoIndex('sara', 5);
+        expect(linkedList.head.value).toEqual('zaid');
+        expect(linkedList.head.next.value).toEqual('mohammed');
+        expect(linkedList.head.next.next.value).toEqual('ahmad');
+        expect(linkedList.head.next.next.next.value).toEqual('laila');
+        expect(linkedList.head.next.next.next.next.value).toEqual('alaa');
+        expect(linkedList.head.next.next.next.next.next.value).toEqual('sara');
+        expect(linkedList.head.next.next.next.next.next.next).toBeNull();
+    });
+    // Test 16
+    // Can successfully return when we try to insert a node into given index of the linked list when the index is out of range
+    /* This is a test case that is testing the insertIntoIndex method of the LinkedList class. */
+    it('should return when we try to insert a node into given index of the linked list when the index is out of range', () => {
+        const linkedList = new LinkedList();
+        linkedList.insert('zaid');
+        linkedList.append('mohammed');
+        linkedList.append('ahmad');
+        linkedList.append('laila');
+        linkedList.append('alaa');
+        expect(linkedList.insertIntoIndex('sara', 6)).toBeUndefined();
+    });
 });
 
 // Author: @zaidalshibi
