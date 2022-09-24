@@ -40,6 +40,7 @@ describe( 'Testing the stack class', () => {
         expect( newStack.peek() ).toEqual( 1 );
     } );
 
+    /* This is testing the isEmpty method. */
     it('Testing the isEmpty method', () => {
         const newStack = new Stack();
         expect( newStack.isEmpty() ).toBeTruthy();
@@ -47,3 +48,5 @@ describe( 'Testing the stack class', () => {
         expect( newStack.isEmpty() ).toBeFalsy();
     })
 } );
+
+// Author : @zaidalshibi

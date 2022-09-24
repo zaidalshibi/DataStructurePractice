@@ -56,3 +56,5 @@ class Stack {
 }
 
 module.exports = Stack
+
+// Author : @zaidalshibi
