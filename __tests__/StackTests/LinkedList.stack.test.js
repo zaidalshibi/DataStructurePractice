@@ -48,3 +48,5 @@ describe('test the linked list', ()=>{
         expect(lastNode).toEqual(3);
     })
 })
+
+// Author : @zaidalshibi

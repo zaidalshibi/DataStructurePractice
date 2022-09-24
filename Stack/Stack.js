@@ -48,6 +48,13 @@ class Stack {
     peek(){
         return this.top
     }
+
+    isEmpty(){
+        if (this.top == null) return true 
+        else return false
+    }
 }
 
 module.exports = Stack
+
+// Author : @zaidalshibi

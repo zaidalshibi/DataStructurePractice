@@ -10,4 +10,4 @@ class Node {
 
 module.exports = Node;
 
-// Author: @zaidalshibi
+// Author : @zaidalshibi

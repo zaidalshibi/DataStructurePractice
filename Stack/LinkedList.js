@@ -91,3 +91,5 @@ class LinkedList {
 }
 
 module.exports = LinkedList;
+
+// Author : @zaidalshibi
