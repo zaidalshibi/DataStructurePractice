@@ -3,7 +3,7 @@
 const Stack = require( '../../Stack/Stack' );
 
 describe( 'Testing the stack class', () => {
-    
+
     /* This is testing the constructor of the Stack class. */
     it( 'test creating a new ins.', () => {
         const newStack = new Stack();
@@ -39,4 +39,11 @@ describe( 'Testing the stack class', () => {
         expect( newStack.popItem() ).toEqual( 1 );
         expect( newStack.peek() ).toEqual( 1 );
     } );
+
+    it('Testing the isEmpty method', () => {
+        const newStack = new Stack();
+        expect( newStack.isEmpty() ).toBeTruthy();
+        newStack.pushItem( 1 );
+        expect( newStack.isEmpty() ).toBeFalsy();
+    })
 } );
