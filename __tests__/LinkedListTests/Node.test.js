@@ -1,6 +1,6 @@
 'use strict';
 
-const Node = require('../LinkedList/Node');
+const Node = require('../../LinkedList/Node');
 
 describe('Testing Node class', () => {
     it('should create a new node', () => {
